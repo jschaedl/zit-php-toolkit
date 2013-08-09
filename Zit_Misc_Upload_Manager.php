@@ -122,17 +122,6 @@ class Zit_Misc_Upload_Manager
                 $file_status = $this->resizeImage( $filepath_orig, $filepath_big, $this->imageMinHeight, -2 );
             }
             
-            try 
-            {
-                $image = WideImage::load($filepath_big);
-                $cropped = $image->crop('center', 'center', $this->imageMinWidth, $this->imageMinHeight);
-                $cropped->saveToFile($filepath_big, $this->imageQuality);
-            } 
-            catch (WideImage_UnknownErrorWhileMappingException $e) 
-            {
-                throw new Exception('Error uploading File!');
-            }
-            
             if (!$file_status) 
             {
                 throw new Exception('Error uploading File!');
