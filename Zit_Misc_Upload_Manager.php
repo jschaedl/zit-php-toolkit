@@ -1,35 +1,49 @@
 <?php
 
+/**
+ * This is a simple class for uploading image files.
+ * 
+ * @author Jan Schädlich <mail@janschaedlich.de>
+ */
 class Zit_Misc_Upload_Manager 
 {
 	protected $supportedFileTypes; // default: image/jpeg
+
 	protected $imageMinWidth; // default: 480
+	
 	protected $imageMinHeight; // default: 640
+	
 	protected $imageQuality; // default: 75
+	
 	protected $keepOriginal; // default: false
 	
 
 	function __construct($uploadConfig=array())
 	{
-		$this->supportedFileTypes = isset($uploadConfig['supported_filetypes']) 
-			? $uploadConfig['supported_filetypes'] 
-			: array('image/jpeg');
+		$this->supportedFileTypes = isset(
+			$uploadConfig['supported_filetypes']) 
+				? $uploadConfig['supported_filetypes'] 
+				: array('image/jpeg');
 
-		$this->imageMinWidth = isset($uploadConfig['image_min_width']) 
-			? $uploadConfig['image_min_width']
-			: 480;
+		$this->imageMinWidth = isset(
+			$uploadConfig['image_min_width']) 
+				? $uploadConfig['image_min_width']
+				: 480;
 
-		$this->imageMinHeight = isset($uploadConfig['image_min_height'])
-			? $uploadConfig['image_min_height']
-			:  640;
+		$this->imageMinHeight = isset(
+			$uploadConfig['image_min_height'])
+				? $uploadConfig['image_min_height']
+				: 640;
 
-		$this->imageQuality = isset($uploadConfig['image_quality'])
-			? $uploadConfig['image_quality']
-			: 75;
+		$this->imageQuality = isset(
+			$uploadConfig['image_quality'])
+				? $uploadConfig['image_quality']
+				: 75;
 
-		$this->keepOriginal = isset($uploadConfig['keep_original'])
-			? $uploadConfig['keep_original']
-			: false;
+		$this->keepOriginal = isset(
+			$uploadConfig['keep_original'])
+				? $uploadConfig['keep_original']
+				: false;
 	}
 
 
@@ -38,13 +52,16 @@ class Zit_Misc_Upload_Manager
 	 * a clear interface to process an uploaded file from PHPs $_FILES array. 
 	 *
 	 * @param PHPs $_FILES['file'] which was uploaded
+	 *
 	 * @param Path to save the file
+	 *
 	 * @param A filename to use for saving the uploaded file. If the filename is empty, 
-	 * the filename is substracted from $_FILES['file']['name']and used in a 
-	 * normalized fashion
-	 * @return void
+	 * 		  the filename is substracted from $_FILES['file']['name']and used in a 
+	 * 		  normalized fashion
+	 *
+	 * @return string
+	 *
 	 * @throws Exception
-	 * @author 
 	 */
 	public function upload($uploadedFile, $filePath,  $customFilename='')
 	{
