@@ -18,7 +18,7 @@ A simple php script to upload image files to a remote server.
 	);
 
 	$filename = $uploadManger->upload(
-        $_FILES['file']
-        , 'images'
+        $_FILES['file'] // PHP's file array
+        , '../images' // relative path of directory for placing uploaded images
     );
 
