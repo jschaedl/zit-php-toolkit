@@ -1,7 +1,7 @@
 php-uploadmanager
 =================
 
-A simple php script to upload files to remote server.
+A simple php script to upload image files to a remote server.
 
 ## Usage
 
