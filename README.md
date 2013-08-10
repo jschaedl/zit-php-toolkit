@@ -5,20 +5,26 @@ A simple php script to upload image files to a remote server.
 
 ## Usage
 
-	require_once('Zit_Misc_Upload_Manager.php');
+	require_once('Uploader.php');
 
-	$uploadManger = new Zit_Misc_Upload_Manager(array(
-		'supported_filetypes' => array(
-			'image/jpeg'
-		)
-		, 'image_min_width' => 480
-		, 'image_min_height' => 640
-		, 'image_quality' => 75
-		, 'keep_original' => false
+	$uploader = new Uploader(array(
+        'locale_code' => 'de'
+        , 'upload_dir' => __DIR__ . '/_upload'
+        , 'supported_filetypes' => array(
+            'image/jpeg'
+        )
+        , 'allow_multiple_uploads' => false
+        , 'allow_override_existing' => true
+        , 'max_file_size' => '8M'
+      )
 	);
 
-	$filename = $uploadManger->upload(
-        $_FILES['file'] // PHP's file array
-        , '../images' // relative path of directory for placing uploaded images
-    );
+	$uploader->receive('file');
+
+
+## Unit Tests
+
+To run the included unit tests go to tst directory and run:
+
+	phpunit --verbose [UploaderTest.php]
 
