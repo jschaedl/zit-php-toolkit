@@ -1,7 +1,7 @@
 ZitLib\Uploader
 =================
 
-A simple php script to upload files. It offers some configuration options and is realy lightweight.
+A simple php script to upload files. It offers some configuration options and is really lightweight.
 
 ## Usage
 
