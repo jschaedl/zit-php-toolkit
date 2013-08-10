@@ -31,6 +31,7 @@ To run the included unit tests go to tst directory and run:
 
 ## Roadmap
 
+* create getters for uploader configuration values
 * localize error messages
 * check directory existence and permissions
 * check configured max_file_size if higher than php.ini max_file_size
