@@ -28,3 +28,11 @@ To run the included unit tests go to tst directory and run:
 
 	phpunit --verbose [UploaderTest.php]
 
+
+## Roadmap
+
+* localize error messages
+* check directory existence and permissions
+* check configured max_file_size if higher than php.ini max_file_size
+
+
