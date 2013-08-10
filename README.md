@@ -1,4 +1,4 @@
-php-zit-toolkit
-=================
+zit-php-toolkit
+===============
 
 
