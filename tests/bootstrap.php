@@ -15,7 +15,7 @@ error_reporting(E_ALL | E_STRICT);
  */
 
 chdir(dirname(__DIR__));
-require('./ZitLib/upload/Uploader.php');
+require('./ZitLib/01_upload/Uploader.php');
 
 
 function is_uploaded_file($filename)
