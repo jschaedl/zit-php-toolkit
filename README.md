@@ -15,11 +15,12 @@ The zit-php-toolkit is a simple library for common tasks. Right, there are much 
 * and some more ...
 
 ## Status
-zit-php-toolkit is currently under development. Feel free to suggest improvements and provide feedback.
+* zit-php-toolkit is currently under development
+* feel free to suggest improvements and provide feedback
 
 ## Roadmap
 * set up a PSR-0 compliant classloader
-* develop more features features
+* develop more features
 * set up more tests
 * ...
 
