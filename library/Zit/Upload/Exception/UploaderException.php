@@ -1,6 +1,6 @@
 <?php
 
-namespace ZitLib;
+namespace Zit\Upload\Exception;
 
 define('UPLOAD_ERR_FILE_IS_EMPTY', 101);
 define('UPLOAD_ERR_UNSUPPORTED_FILETYPE', 102);

@@ -1,8 +1,7 @@
 <?php
 
-namespace ZitLib;
-
-require_once('UploaderException.php');
+namespace Zit\Upload;
+use Zit\Upload\Exception\UploaderException;
 
 
 class Uploader 
@@ -43,7 +42,7 @@ class Uploader
 
             if($this->config['allow_override_existing'])
             {
-                if (move_uploaded_file($file_temp, $file_path)) 
+                if ($this->move_uploaded_file($file_temp, $file_path)) 
                 {
                     chmod($file_path, 0775);
                     return true;
@@ -61,13 +60,33 @@ class Uploader
     public function applyConfig($config)
     {
         $this->config = array_merge($this->config, $config);
-        $this->config['max_file_size'] = $this->convertMaxFilesSize($this->config['max_file_size']);
+        $this->config['max_file_size'] = $this->convertMaxFileSize($this->config['max_file_size']);
+    }
+
+    /**
+     * This metod should be override for testing this class in cli environments like
+     * phpunit. 
+     * @see ZitTest\Upload\TestableUploader
+     */
+    protected function is_uploaded_file($filename)
+    {
+        return is_uploaded_file($filename);
+    }
+
+    /**
+     * This metod should be override for testing this class in cli environments like
+     * phpunit. 
+     * @see ZitTest\Upload\TestableUploader
+     */
+    protected function move_uploaded_file($filename, $destination)
+    {
+        return move_uploaded_file($filename, $destination);
     }
 
     private function checkUploadedFile($uploadedFile)
     {
         // check if uploaded file is empty
-        if(!is_uploaded_file($uploadedFile['tmp_name']))
+        if(!$this->is_uploaded_file($uploadedFile['tmp_name']))
         {
             throw new UploaderException(UPLOAD_ERR_FILE_IS_EMPTY);
         }
@@ -91,7 +110,7 @@ class Uploader
         return true;
     }
 
-    private function convertMaxFilesSize($max_file_size) 
+    private function convertMaxFileSize($max_file_size) 
     {
         if (!isset($max_file_size))
             $max_file_size  = trim(ini_get('post_max_size'));

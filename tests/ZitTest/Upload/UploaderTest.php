@@ -1,6 +1,9 @@
 <?php
 
-namespace ZitLib;
+namespace ZitTest\Upload;
+
+use ZitTest;
+use ZitTest\Upload\TestableUploader;
 
 
 class UploaderTest extends \PHPUnit_Framework_TestCase
@@ -21,7 +24,7 @@ class UploaderTest extends \PHPUnit_Framework_TestCase
             )
         );
 
-        $this->object = new Uploader(array(
+        $this->object = new TestableUploader(array(
             'locale_code' => 'de'
             , 'upload_dir' => __DIR__ . '/_upload'
             , 'supported_filetypes' => array(
