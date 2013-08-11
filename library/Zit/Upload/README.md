@@ -1,11 +1,11 @@
-ZitLib\Uploader
-=================
+Zit\Upload
+==========
 
 A simple php script to upload files. It offers some configuration options and is really lightweight.
 
 ## Usage
 
-	require_once('Uploader.php');
+	use Zit\Upload\Uploader;
 
 	$uploader = new Uploader(array(
         'locale_code' => 'de'
@@ -19,12 +19,13 @@ A simple php script to upload files. It offers some configuration options and is
       )
 	);
 
+    // imagine you submitted a form with input[type=file] named 'file'
 	$uploader->receive('file');
 
 
 ## Unit Tests
 
-To run the included unit tests go to tst directory and run:
+To run the included unit tests go to tests directory and run:
 
 	phpunit --verbose [UploaderTest.php]
 
