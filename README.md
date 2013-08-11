@@ -7,8 +7,8 @@ The zit-php-toolkit is a simple library for common tasks. Right, there are much 
 * [Jan Schädlich](http://www.janschaedlich.de)
 
 ## Features
-* handle file uploads [Package Upload](https://github.com/jschaedl/zit-php-toolkit/library/Zit/Upload)
-* abstract ldap connections [Package Ldap](https://github.com/jschaedl/zit-php-toolkit/library/Zit/Ldap)
+* handle file uploads [Package Upload](https://github.com/jschaedl/zit-php-toolkit/tree/master/library/Zit/Upload)
+* abstract ldap connections (comming soon)
 * abstract database connections (comming soon)
 * send mails (comming soon)
 * create documents with fop (comming soon)
