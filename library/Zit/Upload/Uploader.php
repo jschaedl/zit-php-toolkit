@@ -64,7 +64,7 @@ class Uploader
     }
 
     /**
-     * This metod should be override for testing this class in cli environments like
+     * This method should be overriden for testing purpose especially in cli environments like
      * phpunit. 
      * @see ZitTest\Upload\TestableUploader
      */
@@ -74,7 +74,7 @@ class Uploader
     }
 
     /**
-     * This metod should be override for testing this class in cli environments like
+     * This method should be overriden for testing purpose especially in cli environments like
      * phpunit. 
      * @see ZitTest\Upload\TestableUploader
      */
