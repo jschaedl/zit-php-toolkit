@@ -50,7 +50,7 @@ class UploaderTest extends \PHPUnit_Framework_TestCase
     public function testReceive()
     {
         $this->assertTrue($this->object->receive('file'));
-        //@unlink(__DIR__ . '/_upload/test.jpg');
+        @unlink(__DIR__ . '/_upload/test.jpg');
     }
 
     /**
@@ -62,7 +62,7 @@ class UploaderTest extends \PHPUnit_Framework_TestCase
         if ($this->object->receive('file', 'testImage'))
         {
             $this->assertTrue(file_exists(__DIR__ . '/_upload/testImage.jpg'));
-            //@unlink(__DIR__ . '/_upload/testImage.jpg');
+            @unlink(__DIR__ . '/_upload/testImage.jpg');
         }
     }
 }
