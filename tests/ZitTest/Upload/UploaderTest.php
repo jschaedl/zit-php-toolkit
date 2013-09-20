@@ -23,7 +23,7 @@ class UploaderTest extends \PHPUnit_Framework_TestCase
         
         $this->object = new TestableUploader(array( 
                 'locale_code' => 'de', 
-                'upload_dir' => __DIR__ . '/_upload', 
+                'upload_dir' => __DIR__ . '/_temp', 
                 'supported_filetypes' => array( 
                         'image/jpeg' 
                 ), 
@@ -45,7 +45,7 @@ class UploaderTest extends \PHPUnit_Framework_TestCase
      */
     public function testReceive() {
         $this->assertTrue($this->object->receive('file'));
-        @unlink(__DIR__ . '/_upload/test.jpg');
+        @unlink(__DIR__ . '/_temp/test.jpg');
     }
 
     /**
@@ -55,8 +55,8 @@ class UploaderTest extends \PHPUnit_Framework_TestCase
      */
     public function testReceiveCustomFilename() {
         if ($this->object->receive('file', 'testImage')) {
-            $this->assertTrue(file_exists(__DIR__ . '/_upload/testImage.jpg'));
-            @unlink(__DIR__ . '/_upload/testImage.jpg');
+            $this->assertTrue(file_exists(__DIR__ . '/_temp/testImage.jpg'));
+            @unlink(__DIR__ . '/_temp/testImage.jpg');
         }
     }
 }
