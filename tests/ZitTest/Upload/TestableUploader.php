@@ -10,7 +10,6 @@ use Zit\Upload\Uploader;
  */
 class TestableUploader extends Uploader
 {
-
     protected function is_uploaded_file($filename) {
         return file_exists($filename);
     }
