@@ -39,7 +39,7 @@ class UploaderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Uploader::receive
+     * @covers \Zit\Upload\Uploader::receive
      * 
      * @todo Implement testReceive().
      */
@@ -49,7 +49,7 @@ class UploaderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Uploader::receive
+     * @covers \Zit\Upload\Uploader::receive
      * 
      * @todo Implement testReceive().
      */
